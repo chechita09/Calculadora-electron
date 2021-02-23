@@ -12,11 +12,15 @@
      if (e.key == 'Backspace'){
         borrarNumero()
      }
-     console.log(e)
+     if (e.key == 'Delete'){
+         runOperation('clear')
+     }
  })
 
 const pantalla = document.getElementById('pantalla')
 const tablero = document.getElementById('botones')
+const historial = document.getElementById('historial')
+
 pantalla.textContent = '0'
 
 let numero1, numero2, resultado, tipoOperacion 
@@ -37,7 +41,7 @@ tablero.addEventListener('click', evento => {
         writeNumber(boton.textContent)        
     }
     if ( botonClass === 'botonMath'){
-        getMathOperation(boton.textContent, botonId)
+        getMathOperation(boton.textContent, boton.textContent)
     }
     if (botonClass === 'botonOperacion') {
         runOperation(botonId)
@@ -88,19 +92,15 @@ function runOperation(operacion) {
 function getResult(tipoOperacion) {
     numero2 = Number(pantalla.textContent)
     switch(tipoOperacion){
-        case 'suma':
         case '+':
             resultado = numero1 + numero2
             break
-        case 'resta':
         case '-':                 
             resultado = numero1 - numero2
             break
-        case 'multiplicacion':
         case '*':
             resultado = numero1 * numero2
             break
-        case 'division':
         case '/':                
             resultado = numero1 / numero2
             break
@@ -112,6 +112,7 @@ function getResult(tipoOperacion) {
         pantalla.textContent = 'Error'
     }else {
         pantalla.textContent = resultado
+        historial.innerHTML += numero1 +tipoOperacion+numero2 +'='+resultado+'<br>'
     }
 }  
 //Backspace
@@ -124,3 +125,4 @@ function borrarNumero() {
         pantalla.textContent = str1
     }
 }
+

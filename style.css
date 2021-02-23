@@ -1,10 +1,15 @@
 body {
     background-color: #e28f99;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    overflow: auto;
 }
 #calculadora{
-    width: 90%;
-    max-width: 300px;
-    margin: 0 auto;
+    width: 300px;
+    border: 1px solid white;
+    padding: 15px;
+    background: rgba(255,255,255, 0.2);
 }
 #pantalla {
     text-align: right;
@@ -46,4 +51,16 @@ body {
 }
 .botonOperacion, .botonMath {
     background-color: rgba(0,0,0, 0.6);
+}
+#historial {
+    width: 150px;
+    height: 200px;
+    background: rgba(0,0,0, 0.6);
+    color: white;
+    text-align: right;
+    padding: 15px;
+    border: 1px solid white;
+    font-size: large;
+    margin: 30px;
+    overflow: auto;
 }
