@@ -1,0 +1,49 @@
+body {
+    background-color: #e28f99;
+}
+#calculadora{
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+#pantalla {
+    text-align: right;
+    padding: 10px;
+    background: rgba(0,0,0, 0.8);
+    margin-bottom: 15px;
+    color: white;
+    font-size: x-large;
+}
+.grid-container {
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+.grid-container :first-child {
+    height: 0;
+    padding-bottom: 100%;
+}
+#retroceder, #firstChild {
+    grid-column: 1;
+    grid-row: 1;
+}
+.botonNum, .botonMath, .botonOperacion {
+    border: 1px solid white;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    background: rgba(0,0,0, 0.2);
+}
+#cero {
+    grid-column: span 2;
+}
+#espacio {
+    grid-column: span 3;
+}
+#igual, #suma {
+    grid-row: span 2;
+}
+.botonOperacion, .botonMath {
+    background-color: rgba(0,0,0, 0.6);
+}
