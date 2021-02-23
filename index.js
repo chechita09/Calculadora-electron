@@ -112,7 +112,7 @@ function getResult(tipoOperacion) {
         pantalla.textContent = 'Error'
     }else {
         pantalla.textContent = resultado
-        historial.innerHTML += numero1 +tipoOperacion+numero2 +'='+resultado+'<br>'
+        historial.innerHTML += numero1 + tipoOperacion + numero2 + '=' +resultado+'<br>'
     }
 }  
 //Backspace
@@ -125,4 +125,3 @@ function borrarNumero() {
         pantalla.textContent = str1
     }
 }
-
